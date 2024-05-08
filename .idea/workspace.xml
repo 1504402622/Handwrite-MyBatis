@@ -4,31 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c18ad38d-1c97-428a-a280-79ecf2549369" name="更改" comment="项目初始化">
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/DefaultSqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/DefaultSqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/Resources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/SqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/SqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/SqlSessionFactoryBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/main/java/cn/glfs/mybatis/XNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/test/java/cn/glfs/mybatis/binding/test/dao/IUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/test/java/cn/glfs/mybatis/test/ApiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/test/java/cn/glfs/mybatis/test/po/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/test/resources/mapper/User_Mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-01/src/test/resources/mybatis-config-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-02/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-02/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-02/src/main/java/cn/glfs/mybatis/binding/MapperProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-02/src/test/java/cn/glfs/mybatis/binding/test/ApiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c18ad38d-1c97-428a-a280-79ecf2549369" name="更改" comment="day1代理工厂与代理映射器">
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/SqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/SqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/ApiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/dao/ISchoolDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/dao/IUserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-step-03/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-03/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -66,32 +54,49 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.ApiTest.test_MapperProxyFactory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ApiTest.test_queryUserInfoById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ApiTest.test_queryUserList.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Desktop/小傅/book-small-mybatis-main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;问题&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\IDEA\\IntelliJ IDEA 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ApiTest.test_MapperProxyFactory (1).executor": "Run",
+    "JUnit.ApiTest.test_MapperProxyFactory.executor": "Run",
+    "JUnit.ApiTest.test_queryUserInfoById.executor": "Run",
+    "JUnit.ApiTest.test_queryUserList.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "18",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lenovo/Desktop/小傅/book-small-mybatis-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "问题",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "ts.external.directory.path": "E:\\IDEA\\IntelliJ IDEA 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.ApiTest.test_MapperProxyFactory">
+}]]></component>
+  <component name="RunManager" selected="JUnit.ApiTest.test_MapperProxyFactory (1)">
+    <configuration name="ApiTest.test_MapperProxyFactory (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-step-03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.glfs.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.glfs.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.glfs.mybatis.test.ApiTest" />
+      <option name="METHOD_NAME" value="test_MapperProxyFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiTest.test_MapperProxyFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-step-02" />
       <extension name="coverage">
@@ -155,6 +160,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiTest.test_MapperProxyFactory (1)" />
         <item itemvalue="JUnit.ApiTest.test_MapperProxyFactory" />
         <item itemvalue="JUnit.ApiTest.test_queryUserList" />
         <item itemvalue="JUnit.ApiTest.test_queryUserInfoById" />
@@ -186,7 +192,7 @@
       <workItem from="1714610600712" duration="15000" />
       <workItem from="1714988448287" duration="10000" />
       <workItem from="1715042419947" duration="992000" />
-      <workItem from="1715125693899" duration="355000" />
+      <workItem from="1715125693899" duration="11432000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化">
       <option name="closed" value="true" />
@@ -196,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713689948640</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="day1代理工厂与代理映射器">
+      <option name="closed" value="true" />
+      <created>1715126070035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715126070035</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="项目初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目初始化" />
+    <MESSAGE value="day1代理工厂与代理映射器" />
+    <option name="LAST_COMMIT_MESSAGE" value="day1代理工厂与代理映射器" />
   </component>
 </project>
