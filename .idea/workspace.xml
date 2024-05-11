@@ -5,18 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18ad38d-1c97-428a-a280-79ecf2549369" name="更改" comment="day1代理工厂与代理映射器">
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/SqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/SqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/ApiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/dao/ISchoolDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-03/src/test/java/cn/glfs/mybatis/test/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/binding/MapperMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/binding/MapperProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/binding/MapperRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/builder/BaseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/builder/xml/XMLConfigBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/io/Resources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/mapping/MappedStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/mapping/SqlCommandType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/SqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/SqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/SqlSessionFactoryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/test/java/cn/glfs/mybatis/test/ApiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/test/java/cn/glfs/mybatis/test/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/test/java/cn/glfs/mybatis/test/po/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/test/resources/mapper/User_Mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-step-04/src/test/resources/mybatis-config-datasource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-03/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-03/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-03/src/main/java/cn/glfs/mybatis/binding/MapperProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-step-04/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-04/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +69,7 @@
   "keyToString": {
     "JUnit.ApiTest.test_MapperProxyFactory (1).executor": "Run",
     "JUnit.ApiTest.test_MapperProxyFactory.executor": "Run",
+    "JUnit.ApiTest.test_SqlSessionFactory.executor": "Run",
     "JUnit.ApiTest.test_queryUserInfoById.executor": "Run",
     "JUnit.ApiTest.test_queryUserList.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -80,7 +92,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ApiTest.test_MapperProxyFactory (1)">
+  <component name="RunManager" selected="JUnit.ApiTest.test_SqlSessionFactory">
     <configuration name="ApiTest.test_MapperProxyFactory (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-step-03" />
       <extension name="coverage">
@@ -108,6 +120,22 @@
       <option name="PACKAGE_NAME" value="cn.glfs.mybatis.binding.test" />
       <option name="MAIN_CLASS_NAME" value="cn.glfs.mybatis.binding.test.ApiTest" />
       <option name="METHOD_NAME" value="test_MapperProxyFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTest.test_SqlSessionFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-step-04" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.glfs.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.glfs.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.glfs.mybatis.test.ApiTest" />
+      <option name="METHOD_NAME" value="test_SqlSessionFactory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,6 +188,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiTest.test_SqlSessionFactory" />
         <item itemvalue="JUnit.ApiTest.test_MapperProxyFactory (1)" />
         <item itemvalue="JUnit.ApiTest.test_MapperProxyFactory" />
         <item itemvalue="JUnit.ApiTest.test_queryUserList" />
@@ -193,6 +222,10 @@
       <workItem from="1714988448287" duration="10000" />
       <workItem from="1715042419947" duration="992000" />
       <workItem from="1715125693899" duration="11432000" />
+      <workItem from="1715156827012" duration="8050000" />
+      <workItem from="1715216225358" duration="9000" />
+      <workItem from="1715220698348" duration="16000" />
+      <workItem from="1715386035706" duration="5950000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化">
       <option name="closed" value="true" />
