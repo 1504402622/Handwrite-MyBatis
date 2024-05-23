@@ -114,7 +114,7 @@ public class Configuration {
         return new SimpleExecutor(this, transaction);
     }
     /**
-     * 创建语句处理器
+     * 创建语句处理器，默认是PreparedStatementHandler
      */
     public StatementHandler newStatementHandler(Executor executor, MappedStatement mappedStatement, Object parameter, ResultHandler resultHandler, BoundSql boundSql){
         return new PreparedStatementHandler(executor, mappedStatement, parameter, resultHandler, boundSql);
