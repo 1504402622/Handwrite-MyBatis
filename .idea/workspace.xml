@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c18ad38d-1c97-428a-a280-79ecf2549369" name="更改" comment="day6细化XML语句构建器,完善静态sql解析">
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/ParameterExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/SqlSourceBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/StaticSqlSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/xml/XMLMapperBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/xml/XMLStatementBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/SqlSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/parsing/GenericTokenParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/parsing/TokenHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/LanguageDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/LanguageDriverRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/defaults/RawSqlSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/DynamicContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/MixedSqlNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/SqlNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/StaticTextSqlNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/XMLLanguageDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/scripting/xmltags/XMLScriptBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/type/TypeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/type/TypeHandlerRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/BaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/BaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/xml/XMLConfigBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/builder/xml/XMLConfigBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/executor/resultset/DefaultResultSetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/executor/resultset/DefaultResultSetHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/io/Resources.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/io/Resources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/BoundSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/BoundSql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/MappedStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/MappedStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/ParameterMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/mapping/ParameterMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/session/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/session/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/session/defaults/DefaultSqlSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/type/TypeAliasRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-step-09/src/main/java/cn/glfs/mybatis/type/TypeAliasRegistry.java" afterDir="false" />
-    </list>
+    <list default="true" id="c18ad38d-1c97-428a-a280-79ecf2549369" name="更改" comment="day6细化XML语句构建器,完善静态sql解析" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,7 +243,7 @@
       <workItem from="1716217057410" duration="2497000" />
       <workItem from="1716359444255" duration="28641000" />
       <workItem from="1716532294718" duration="4703000" />
-      <workItem from="1716693242514" duration="18028000" />
+      <workItem from="1716693242514" duration="18834000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化">
       <option name="closed" value="true" />
@@ -356,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716534980686</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="day6细化XML语句构建器,完善静态sql解析">
+      <option name="closed" value="true" />
+      <created>1716736859971</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716736859971</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
