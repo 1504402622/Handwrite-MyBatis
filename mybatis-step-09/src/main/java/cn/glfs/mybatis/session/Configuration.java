@@ -14,36 +14,45 @@ import cn.glfs.mybatis.executor.statement.StatementHandler;
 import cn.glfs.mybatis.mapping.BoundSql;
 import cn.glfs.mybatis.mapping.Environment;
 import cn.glfs.mybatis.mapping.MappedStatement;
+import cn.glfs.mybatis.reflection.MetaObject;
+import cn.glfs.mybatis.reflection.factory.DefaultObjectFactory;
+import cn.glfs.mybatis.reflection.factory.ObjectFactory;
+import cn.glfs.mybatis.reflection.wrapper.DefaultObjectWrapperFactory;
+import cn.glfs.mybatis.reflection.wrapper.ObjectWrapperFactory;
+import cn.glfs.mybatis.scripting.LanguageDriverRegistry;
+import cn.glfs.mybatis.scripting.xmltags.XMLLanguageDriver;
 import cn.glfs.mybatis.transaction.Transaction;
 import cn.glfs.mybatis.transaction.jdbc.JdbcTransactionFactory;
 import cn.glfs.mybatis.type.TypeAliasRegistry;
+import cn.glfs.mybatis.type.TypeHandlerRegistry;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * （含代理对象的注册类、接口方法名（id）-sql语句类映射器）配置类
  */
 public class Configuration {
-    /**
-     * 环境
-     */
+    // 环境
     protected Environment environment;
-
-    /**
-     * （含接口-代理工厂映射器）代理对象的注册类
-     */
+    // （含接口-代理工厂映射器）代理对象的注册类
     protected MapperRegistry mapperRegistry = new MapperRegistry(this);
-
-    /**
-     * 接口方法名（id）-sql语句类映射器
-     */
+    // 接口方法名（namespace+id）-sql语句类映射器
     protected final Map<String, MappedStatement> mappedStatements = new HashMap<>();
-
-    /**
-     * 类型别名注册机
-     */
+    // 类型别名注册机
     protected final TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();
+    // 脚本语言注册器
+    protected final LanguageDriverRegistry languageRegistry = new LanguageDriverRegistry();
+    // 类型处理器注册机
+    protected final TypeHandlerRegistry typeHandlerRegistry = new TypeHandlerRegistry();
+    // 对象工厂和对象包装器工厂
+    protected ObjectFactory objectFactory = new DefaultObjectFactory();
+    protected ObjectWrapperFactory objectWrapperFactory = new DefaultObjectWrapperFactory();
+    // 资源加载标记
+    protected final Set<String> loadedResources = new HashSet<>();
+    protected String databaseId;
 
     public Configuration() {
         typeAliasRegistry.registerAlias("JDBC", JdbcTransactionFactory.class);
@@ -51,6 +60,8 @@ public class Configuration {
         typeAliasRegistry.registerAlias("DRUID", DruidDataSourceFactory.class);
         typeAliasRegistry.registerAlias("UNPOOLED", UnpooledDataSourceFactory.class);
         typeAliasRegistry.registerAlias("POOLED", PooledDataSourceFactory.class);
+
+        languageRegistry.setDefaultDriverClass(XMLLanguageDriver.class);
     }
 
     /**
@@ -73,9 +84,8 @@ public class Configuration {
     }
 
     /**
-     * 接口方法名（id）-sql语句映射器相关
+     * 接口方法名（id）-sql语句映射器相关，映射器增加 接口方法id-sql语句类对
      */
-    //映射器增加 接口方法id-sql语句类对
     public void addMappedStatement(MappedStatement ms) {
         mappedStatements.put(ms.getId(), ms);
     }
@@ -99,6 +109,9 @@ public class Configuration {
     public void setEnvironment(Environment environment) {
         this.environment = environment;
     }
+    public String getDatabaseId() {
+        return databaseId;
+    }
 
     /**
      * 创建结果集处理器
@@ -113,10 +126,48 @@ public class Configuration {
     public Executor newExecutor(Transaction transaction) {
         return new SimpleExecutor(this, transaction);
     }
+
     /**
      * 创建语句处理器，默认是PreparedStatementHandler
      */
     public StatementHandler newStatementHandler(Executor executor, MappedStatement mappedStatement, Object parameter, ResultHandler resultHandler, BoundSql boundSql){
         return new PreparedStatementHandler(executor, mappedStatement, parameter, resultHandler, boundSql);
     }
+
+
+    /**
+     * 创建元对象
+     */
+    public MetaObject newMetaObject(Object object) {
+        return MetaObject.forObject(object, objectFactory, objectWrapperFactory);
+    }
+
+    /**
+     * 类型处理器注册机
+     */
+    public TypeHandlerRegistry getTypeHandlerRegistry() {
+        return typeHandlerRegistry;
+    }
+
+    /**
+     * 判断是否加载
+     */
+    public boolean isResourceLoaded(String resource) {
+        return loadedResources.contains(resource);
+    }
+
+    /**
+     * 标记已加载资源
+     */
+    public void addLoadedResource(String resource) {
+        loadedResources.add(resource);
+    }
+
+    /**
+     * 获取脚本语言驱动
+     */
+    public LanguageDriverRegistry getLanguageRegistry() {
+        return languageRegistry;
+    }
+
 }
