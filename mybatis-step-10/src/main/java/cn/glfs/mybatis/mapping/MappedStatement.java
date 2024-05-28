@@ -1,6 +1,7 @@
 package cn.glfs.mybatis.mapping;
 
 
+import cn.glfs.mybatis.scripting.LanguageDriver;
 import cn.glfs.mybatis.session.Configuration;
 
 /**
@@ -12,6 +13,7 @@ public class MappedStatement {
     private SqlCommandType sqlCommandType;
     private SqlSource sqlSource;
     Class<?> resultType;
+    private LanguageDriver lang;
 
 
     MappedStatement() {
@@ -30,6 +32,7 @@ public class MappedStatement {
             mappedStatement.sqlCommandType = sqlCommandType;
             mappedStatement.sqlSource = sqlSource;
             mappedStatement.resultType = resultType;
+            mappedStatement.lang = configuration.getDefaultScriptingLanguageInstance();//获取默认default
         }
 
         public MappedStatement build() {
@@ -58,5 +61,7 @@ public class MappedStatement {
     public Class<?> getResultType() {
         return resultType;
     }
-
+    public LanguageDriver getLang() {
+        return lang;
+    }
 }

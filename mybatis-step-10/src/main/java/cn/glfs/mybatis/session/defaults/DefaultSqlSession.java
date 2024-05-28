@@ -5,11 +5,16 @@ import cn.glfs.mybatis.executor.Executor;
 import cn.glfs.mybatis.mapping.MappedStatement;
 import cn.glfs.mybatis.session.Configuration;
 import cn.glfs.mybatis.session.SqlSession;
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 
 public class DefaultSqlSession implements SqlSession {
+
+    private Logger logger = LoggerFactory.getLogger(DefaultSqlSession.class);
 
     private Configuration configuration;
     private Executor executor;
@@ -19,38 +24,18 @@ public class DefaultSqlSession implements SqlSession {
         this.executor = executor;
     }
 
-
     @Override
     public <T> T selectOne(String statement) {
-        return (T)("你的操作被代理了！"+statement);
+        return this.selectOne(statement, null);
     }
 
-    /**
-     * 通过sql语句类获取sql语句，实际执行
-     * //        try {
-     * //            MappedStatement mappedStatement = configuration.getMappedStatement(statement);
-     * //            Environment environment = configuration.getEnvironment();
-     * //
-     * //            Connection connection = environment.getDataSource().getConnection();
-     * //
-     * //            BoundSql boundSql = mappedStatement.getBoundSql();
-     * //            PreparedStatement preparedStatement = connection.prepareStatement(boundSql.getSql());
-     * //            preparedStatement.setLong(1, Long.parseLong(((Object[]) parameter)[0].toString()));
-     * //            ResultSet resultSet = preparedStatement.executeQuery();
-     * //            List<T> objList = resultSet2Obj(resultSet, Class.forName(boundSql.getResultType()));
-     * //            return objList.get(0);
-     * //        }catch (Exception e) {
-     * //            e.printStackTrace();
-     * //            return null;
-     * //        }
-     */
     @Override
     public <T> T selectOne(String statement, Object parameter) {
+        logger.info("执行查询 statement：{} parameter：{}", statement, JSON.toJSONString(parameter));
         MappedStatement ms = configuration.getMappedStatement(statement);
         List<T> list = executor.query(ms, parameter, Executor.NO_RESULT_HANDLER, ms.getSqlSource().getBoundSql(parameter));
         return list.get(0);
     }
-
 
     @Override
     public <T> T getMapper(Class<T> type) {
@@ -61,4 +46,5 @@ public class DefaultSqlSession implements SqlSession {
     public Configuration getConfiguration() {
         return configuration;
     }
+
 }

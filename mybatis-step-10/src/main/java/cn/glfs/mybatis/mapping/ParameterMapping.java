@@ -2,9 +2,11 @@ package cn.glfs.mybatis.mapping;
 
 import cn.glfs.mybatis.session.Configuration;
 import cn.glfs.mybatis.type.JdbcType;
+import cn.glfs.mybatis.type.TypeHandler;
+import cn.glfs.mybatis.type.TypeHandlerRegistry;
 
 /**
- * 参数映射#{property,javaType=int,jdbcType=NUMERIC}
+ * 每条语句参数映射#{property,javaType=int,jdbcType=NUMERIC}
  */
 public class ParameterMapping {
     private Configuration configuration;
@@ -14,11 +16,15 @@ public class ParameterMapping {
     private Class<?> javaType = Object.class;
     // jdbcType=NUMERIC
     private JdbcType jdbcType;
+    // 参数的语句类型
+    private TypeHandler<?> typeHandler;
 
     private ParameterMapping() {
     }
     public static class Builder {
+
         private ParameterMapping parameterMapping = new ParameterMapping();
+
         public Builder(Configuration configuration, String property, Class<?> javaType) {
             parameterMapping.configuration = configuration;
             parameterMapping.property = property;
@@ -34,7 +40,14 @@ public class ParameterMapping {
             parameterMapping.jdbcType = jdbcType;
             return this;
         }
+
         public ParameterMapping build() {
+            if (parameterMapping.typeHandler == null && parameterMapping.javaType != null) {
+                Configuration configuration = parameterMapping.configuration;
+                TypeHandlerRegistry typeHandlerRegistry = configuration.getTypeHandlerRegistry();
+                parameterMapping.typeHandler = typeHandlerRegistry.getTypeHandler(parameterMapping.javaType, parameterMapping.jdbcType);
+            }
+
             return parameterMapping;
         }
     }
@@ -53,4 +66,8 @@ public class ParameterMapping {
     public JdbcType getJdbcType() {
         return jdbcType;
     }
+    public TypeHandler<?> getTypeHandler() {
+        return typeHandler;
+    }
+
 }

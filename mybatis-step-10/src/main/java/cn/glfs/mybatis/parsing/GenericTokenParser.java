@@ -17,13 +17,11 @@ public class GenericTokenParser {
         this.handler = handler;
     }
 
-    // 查找到${}并调用替换handler.handleToken调用
     public String parse(String text) {
         StringBuilder builder = new StringBuilder();
         if (text != null && text.length() > 0) {
             char[] src = text.toCharArray();
             int offset = 0;
-            // 找到文本中某个特定标记（openToken）的起始位置，offset作用是告诉其从哪开始搜索
             int start = text.indexOf(openToken, offset);
             // #{favouriteSection,jdbcType=VARCHAR}
             // 这里是循环解析参数，参考GenericTokenParserTest,比如可以解析${first_name} ${initial} ${last_name} reporting.这样的字符串,里面有3个${}

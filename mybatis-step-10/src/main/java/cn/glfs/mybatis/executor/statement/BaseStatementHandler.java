@@ -2,6 +2,7 @@ package cn.glfs.mybatis.executor.statement;
 
 
 import cn.glfs.mybatis.executor.Executor;
+import cn.glfs.mybatis.executor.parameter.ParameterHandler;
 import cn.glfs.mybatis.executor.resultset.ResultSetHandler;
 import cn.glfs.mybatis.mapping.BoundSql;
 import cn.glfs.mybatis.mapping.MappedStatement;
@@ -21,6 +22,7 @@ public abstract class BaseStatementHandler implements StatementHandler {
     protected final MappedStatement mappedStatement;
     protected final Object parameterObject;
     protected final ResultSetHandler resultSetHandler;
+    protected final ParameterHandler parameterHandler;
     protected BoundSql boundSql;
     public BaseStatementHandler(Executor executor, MappedStatement mappedStatement, Object parameterObject, ResultHandler resultHandler, BoundSql boundSql) {
         this.configuration = mappedStatement.getConfiguration();
@@ -29,6 +31,7 @@ public abstract class BaseStatementHandler implements StatementHandler {
         this.boundSql = boundSql;
 
         this.parameterObject = parameterObject;
+        this.parameterHandler = configuration.newParameterHandler(mappedStatement, parameterObject, boundSql);
         this.resultSetHandler = configuration.newResultSetHandler(executor, mappedStatement, boundSql);
     }
 
